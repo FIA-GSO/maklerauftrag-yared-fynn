@@ -12,11 +12,11 @@ counter = 1
 
 while has_another_room:
     room_dictionary["Id"].append(counter)
-    room_name = input("Bitte gib den Raumbezeichnung an: ")
+    room_name = input("Bitte gib die Raumbezeichnung an: ")
     room_dictionary["Name"].append(room_name)
     has_another_area = True
     room_area = 0
-    counter += counter
+    counter += 1
     while has_another_area:
         room_length = int(input("Bitte gib die Länge an: "))
         room_width = int(input("Bitte gib die Breite an: "))
@@ -41,13 +41,16 @@ while has_another_room:
         names = room_dictionary["Name"]
         areas = room_dictionary["Area"]
         gesamtflaeche = 0
+        print("\n------------------------------------------------\n")
+        print(f"{"Raumnummer":18}|{"Raumbezeichnung":18}|{"Fläche":18}")
+        print("--------------------------------------------")
         for i in range(len(ids)):
             gesamtflaeche += areas[i]
-            print("-----------")
-            print("Raumnummer: " + str(ids[i]))
-            print("Raumbezeichnung: " + names[i])
-            print("Flaeche: " + str(areas[i]))
-        print("-----------")
+            print(f"{str(ids[i]):18}|{names[i]:18}|{str(areas[i]):18}")
+            #print("Raumnummer: " + str(ids[i]))
+            #print("Raumbezeichnung: " + names[i])
+            #print("Flaeche: " + str(areas[i]))
+        print("------------------------------------------------")
         print("Gesamtflaeche: " + str(gesamtflaeche))
         break
     elif next_room == "Y" or next_room == "y":
